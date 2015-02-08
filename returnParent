@@ -1,0 +1,13 @@
+<?php
+/*Clear the output*/
+$output = '';
+/* Get the current resource's 'parent' id */
+$parentId = $modx->resource->get('parent');
+/* Get the whole parent object */
+$parentObj = $modx->getObject('modResource', $parentId);
+/*Get our field value*/
+if ($parentObj) {
+    $output = $parentObj->get($field);
+}
+/*Output our field value*/
+return $output;
